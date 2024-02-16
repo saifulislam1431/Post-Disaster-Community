@@ -7,8 +7,14 @@ const publicApi = baseApi.injectEndpoints({
                 url:"all-post",
                 method:"GET"
             })
+        }),
+        getAllTestimonial: builder.query({
+            query: ()=>({
+                url: "all-testimonial",
+                method: "GET"
+            })
         })
     })
 });
 
-export const {useGetAllPostQuery} = publicApi;
+export const {useGetAllPostQuery, useGetAllTestimonialQuery} = publicApi;
