@@ -22,7 +22,7 @@ const Navbar = () => {
     </>
 
     return (
-        <header className="border-b border-gray-200 px-4 py-3 nav-bg mb-16 sticky top-0">
+        <header className="border-b border-gray-200 px-4 py-3 nav-bg fixed top-0 left-0 right-0 z-50">
             <nav className="w-full flex items-center justify-between">
                 <div className="logo-container flex items-center gap-2 lg:w-full w-3/4">
                     <motion.div
