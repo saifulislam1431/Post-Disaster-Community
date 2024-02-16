@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
     return (
-        <section className="max-w-7xl mx-auto">
+        <section className="max-w-7xl mx-auto overflow-hidden">
             <Navbar />
             <div className="px-4 lg:px-10">
                 <Outlet />
