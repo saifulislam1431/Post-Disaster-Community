@@ -16,7 +16,7 @@ const Main = () => {
             <Navbar />
             <div className="px-4 lg:px-10 mt-32">
                 <motion.div
-                    className="progress-bar mt-[81px] z-50"
+                    className="progress-bar z-50"
                     style={{ scaleX: scrollYProgress }}
                 />
                 <Outlet />

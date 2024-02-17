@@ -1,4 +1,5 @@
 import Main from "@/Layouts/Main/Main";
+import About from "@/pages/About/About";
 import AllSupplies from "@/pages/AllSupplies/AllSupplies";
 import Dashboard from "@/pages/Dashboard/Dashboard";
 import Home from "@/pages/Home/Home";
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/supplies/:id",
                 element: <SupplyDetail />
+            },
+            {
+                path: "/about",
+                element: <About />
             }
         ]
     },
