@@ -25,8 +25,14 @@ const publicApi = baseApi.injectEndpoints({
                 url: "upcoming-events",
                 method: "GET"
             })
+        }),
+        getSinglePost: builder.query({
+            query: (id)=>({
+                url: `single-post-details/${id}`,
+                method: "GET"
+            })
         })
     })
 });
 
-export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery} = publicApi;
+export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery} = publicApi;
