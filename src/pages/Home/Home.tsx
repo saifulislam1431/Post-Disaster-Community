@@ -6,7 +6,7 @@ import SupplyPosts from "./LandingComponents/SupplyPosts/SupplyPosts";
 import Testimonials from "./LandingComponents/Testimonials/Testimonials";
 import UpcomingEvents from "./LandingComponents/UpcomingEvents/UpcomingEvents";
 import WhoAreWe from "./LandingComponents/WhoAreWe/WhoAreWe";
-import WhoItWorks from "./LandingComponents/WhoItWorks/WhoItWorks";
+// import WhoItWorks from "./LandingComponents/WhoItWorks/WhoItWorks";
 
 const Home = () => {
     return (
@@ -16,7 +16,7 @@ const Home = () => {
             <Testimonials />
             <Gallery />
             <WhoAreWe />
-            <WhoItWorks />
+            {/* <WhoItWorks /> */}
             <OurVolunteer />
             <UpcomingEvents />
             <OurPartner />
