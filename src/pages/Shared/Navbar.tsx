@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
         <header className="border-b border-gray-200 px-4 py-3 nav-bg fixed top-0 left-0 right-0 z-50">
             <nav className="w-full flex items-center justify-between">
-                <div className="logo-container flex items-center gap-2 lg:w-full w-3/4">
+                <Link to="/" className="logo-container flex items-center gap-2 lg:w-full w-3/4">
                     <motion.div
                         initial={{
                             y: -300
@@ -44,9 +44,9 @@ const Navbar = () => {
                         <h1 className="brandFont text-2xl text-gradient">HealthBridge</h1>
                         <p className="text-sm font-semibold">Uniting Communities for Post-Disaster Recovery</p>
                     </div>
-                </div>
+                </Link>
 
-                <div className="hidden lg:flex items-center gap-2 w-full justify-end">
+                <div className="hidden lg:flex items-center gap-5 w-full justify-end">
                     {navItems}
                 </div>
 
