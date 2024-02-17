@@ -7,9 +7,9 @@ import icon4 from "../../../../assets/who-we-are/humanitarian-aid.png"
 const WhoAreWe = () => {
     return (
         <section>
-            <div className="flex flex-col lg:flex-row items-center justify-center h-[389px]">
+            <div className="flex flex-col md:flex-row items-center justify-center h-[389px]">
                 <div className="relative w-full h-full">
-                    <img src={heroImg} alt="Hero Image" />
+                    <img src={heroImg} alt="Hero Image" className="h-full" />
                     <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center bg-primary bg-opacity-70">
                         <h1 className="brandFont text-4xl text-white"><span className="text-7xl">W</span>hat We DO?</h1>
                     </div>

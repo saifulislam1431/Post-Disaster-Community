@@ -3,7 +3,7 @@ import { TGallery } from "@/types/gallery.type";
 
 const GalleryItem = ({ item }: { item: TGallery }) => {
     return (
-        <motion.div className="col-span-12 lg:col-span-4 h-72 relative hover:border hover:border-secondary cursor-pointer overflow-hidden"
+        <motion.div className="col-span-12 md:col-span-4 h-72 relative hover:border hover:border-secondary cursor-pointer overflow-hidden"
             whileHover={{
                 scale: 1.1,
                 zIndex: 1,
