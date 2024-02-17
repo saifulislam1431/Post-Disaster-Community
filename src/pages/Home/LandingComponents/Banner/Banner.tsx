@@ -1,10 +1,37 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 const Banner = () => {
+
+    // const bannerAnimate = {
+    //     hidden: {
+    //         opacity: 0,
+    //         x: -400
+    //     },
+    //     visible: {
+    //         opacity: 1,
+    //         x: 0
+    //     }
+    // }
+
+
     return (
-        <section>
+        <motion.section
+            initial={{
+                opacity: 0,
+                x: -400
+            }}
+            animate={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                    duration: 1,
+                    type: "spring"
+                }
+            }}
+        >
             <Carousel showThumbs={false} stopOnHover={true} autoPlay={true}>
                 <div className="relative">
                     <img src="https://i.ibb.co/1mFXqT7/wildfire.png" alt="Hero-Bg1" className="h-[168px] lg:h-[516px]" />
@@ -67,7 +94,7 @@ const Banner = () => {
                     </div>
                 </div>
             </Carousel>
-        </section>
+        </motion.section>
     );
 };
 
