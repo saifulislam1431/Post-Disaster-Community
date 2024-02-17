@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const About = () => {
     return (
         <div className='my-container my-20'>
@@ -5,28 +7,43 @@ const About = () => {
                 <div className='max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12'>
                     <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto'>
                         <span className='relative inline-block'>
-                            <svg
-                                viewBox='0 0 50 21'
-                                fill='currentColor'
-                                className='absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block'
+                            <motion.div
+                                initial={{
+                                    x: -600,
+                                    opacity: 0
+                                }}
+                                animate={{
+                                    x: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 1,
+                                        type: "spring"
+                                    }
+                                }}
                             >
-                                <defs>
-                                    <pattern
-                                        id='70326c9b-4a0f-429b-9c76-792941e326d5'
-                                        x='0'
-                                        y='0'
-                                        width='.10'
-                                        height='.3'
-                                    >
-                                        <circle cx='1' cy='1' r='.7' />
-                                    </pattern>
-                                </defs>
-                                <rect
-                                    fill='url(#70326c9b-4a0f-429b-9c76-792941e326d5)'
-                                    width='52'
-                                    height='24'
-                                />
-                            </svg>
+                                <svg
+                                    viewBox='0 0 50 21'
+                                    fill='currentColor'
+                                    className='absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block'
+                                >
+                                    <defs>
+                                        <pattern
+                                            id='70326c9b-4a0f-429b-9c76-792941e326d5'
+                                            x='0'
+                                            y='0'
+                                            width='.10'
+                                            height='.3'
+                                        >
+                                            <circle cx='1' cy='1' r='.7' />
+                                        </pattern>
+                                    </defs>
+                                    <rect
+                                        fill='url(#70326c9b-4a0f-429b-9c76-792941e326d5)'
+                                        width='52'
+                                        height='24'
+                                    />
+                                </svg>
+                            </motion.div>
                             <span className='relative'>A</span>
                         </span>{' '}
                         Post-Disaster Community Health and Medical Supply Chain Platform

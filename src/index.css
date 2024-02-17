@@ -112,4 +112,8 @@ body {
   .myBtnSec {
     @apply border border-[#7d80c7] font-semibold rounded-md text-[#7d80c7] hover:bg-[#7d80c7] hover:text-white
   }
+
+  .inputField {
+    @apply w-full px-6 py-2 rounded-md bg-gray-600 bg-opacity-20 focus:outline focus:outline-accent disabled:opacity-70 disabled:cursor-not-allowed placeholder:text-sm placeholder:text-primary placeholder:font-semibold
+  }
 }

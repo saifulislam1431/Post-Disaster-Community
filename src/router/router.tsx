@@ -1,6 +1,7 @@
 import Main from "@/Layouts/Main/Main";
 import About from "@/pages/About/About";
 import AllSupplies from "@/pages/AllSupplies/AllSupplies";
+import Contact from "@/pages/Contact/Contact";
 import Dashboard from "@/pages/Dashboard/Dashboard";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
             }
         ]
     },
