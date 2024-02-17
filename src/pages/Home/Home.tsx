@@ -10,7 +10,7 @@ import WhoItWorks from "./LandingComponents/WhoItWorks/WhoItWorks";
 
 const Home = () => {
     return (
-        <section className="space-y-10 lg:space-y-20">
+        <section className="space-y-36">
             <Banner />
             <SupplyPosts />
             <Testimonials />
