@@ -1,6 +1,6 @@
 import { TCredential } from "@/types/credentials.type";
 import { createSlice } from "@reduxjs/toolkit";
-
+import {RootState} from "../../store"
 
 const initialState: TCredential={
     user: null,
@@ -26,3 +26,6 @@ const authSlice = createSlice({
 export const {setUser, logout} = authSlice.actions;
 
 export default authSlice.reducer;
+
+export const useCurrentToken = (state: RootState) => state.auth.token;
+export const selectCurrentUser = (state: RootState) => state.auth.user;

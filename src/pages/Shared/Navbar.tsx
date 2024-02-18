@@ -4,8 +4,25 @@ import "../../styles/nav.css"
 import { useState } from "react";
 import cn from "@/utils/cn";
 import { motion } from "framer-motion";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { logout, useCurrentToken } from "@/redux/features/auth/authSlice";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+    const token = useAppSelector(useCurrentToken);
+    const dispatch = useAppDispatch();
+    // console.log('====================================');
+    // console.log(token);
+    // console.log('====================================');
+    const handleOut = () => {
+        dispatch(logout());
+        Swal.fire({
+            title: 'Success!',
+            text: 'Logout successful!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        })
+    }
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -14,11 +31,17 @@ const Navbar = () => {
         <NavLink to="/supplies" className={({ isActive }) => (isActive ? "active" : "default")}>All Supplies</NavLink>
         <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "default")}>About Us</NavLink>
         <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "default")}>Contact Us</NavLink>
-        <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "default")}>Dashboard</NavLink>
+        {
+            token && <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "default")}>Dashboard</NavLink>
+        }
 
-        <button className="myBtn">
-            <Link to="/login">Login</Link>
-        </button>
+        {
+            token ? <button onClick={handleOut} className="myBtn">
+                Logout
+            </button> : <button className="myBtn">
+                <Link to="/login">Login</Link>
+            </button>
+        }
     </>
 
     return (

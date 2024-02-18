@@ -7,7 +7,11 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import SupplyDetail from "@/pages/SupplyDetail/SupplyDetail";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
+import AllSuppliesPost from "@/pages/UserDashboard/AllSuppliesPost/AllSuppliesPost";
+import CreateSupply from "@/pages/UserDashboard/CreateSupply/CreateSupply";
+import DashHome from "@/pages/UserDashboard/Home/DashHome";
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +50,24 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard />
+        element: <PrivateRoute><Dashboard /></PrivateRoute>,
+        children: [
+            {
+                index: true,
+                element: <Navigate to="/dashboard/home"></Navigate>
+            },
+            {
+                path: "home",
+                element: <DashHome />
+            },
+            {
+                path: "supplies",
+                element: <AllSuppliesPost />
+            },
+            {
+                path: "create-supply",
+                element: <CreateSupply />
+            }
+        ]
     }
 ]);
