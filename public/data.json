@@ -1,0 +1,40 @@
+{
+    "pie_chart": {
+        "medical_supplies": {
+            "name": "Medical Supplies",
+            "quantity": 1500
+        },
+        "first_aid_kits": {
+            "name": "First Aid Kits",
+            "quantity": 800
+        },
+        "medications": {
+            "name": "Medications",
+            "quantity": 1200
+        },
+        "emergency_supplies": {
+            "name": "Emergency Supplies",
+            "quantity": 2500
+        },
+        "medical_equipment": {
+            "name": "Medical Equipment",
+            "quantity": 300
+        }
+    },
+    "bar_charts": {
+        "supplies_by_month": {
+            "January": 100,
+            "February": 150,
+            "March": 200,
+            "April": 180,
+            "May": 220,
+            "June": 250,
+            "July": 300,
+            "August": 280,
+            "September": 320,
+            "October": 350,
+            "November": 370,
+            "December": 400
+        }
+    }
+}
