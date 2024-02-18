@@ -4,14 +4,36 @@ import { Link } from "react-router-dom";
 import img from "../../assets/login/login.jpg"
 import { HiArrowSmLeft } from "react-icons/hi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useLoginMutation } from "@/redux/features/auth/authAPi";
+import Swal from "sweetalert2";
+import { useAppDispatch } from "@/redux/hooks";
+import { setUser } from "@/redux/features/auth/authSlice";
+import { verifyToken } from "@/utils/verifyToken";
 
 const Login = () => {
+    const [login] = useLoginMutation();
+    const dispatch = useAppDispatch()
     const [type, setType] = useState("password");
     const [IsShow, setIsShow] = useState(false);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const onSubmit = (data: FieldValues) => {
-        console.log(data);
+    const onSubmit = async (data: FieldValues) => {
+        const res = await login(data).unwrap();
+
+        const user = verifyToken(res?.token)
+
+
+        if (res?.success) {
+            Swal.fire({
+                title: 'Success!',
+                text: `${res?.message}`,
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            });
+            dispatch(setUser({ user: user, token: res?.token }))
+        } else {
+            console.error("An error occurred:", res);
+        }
 
     }
     const handleShow = () => {

@@ -4,15 +4,38 @@ import { Link } from "react-router-dom";
 import img from "../../assets/login/register.jpg"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { HiArrowSmLeft } from "react-icons/hi";
+import { useRegisterUserMutation } from "@/redux/features/auth/authAPi";
+import Swal from 'sweetalert2'
 
 const Register = () => {
+    const [registerUser] = useRegisterUserMutation();
     const [type, setType] = useState("password");
     const [IsShow, setIsShow] = useState(false);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const onSubmit = (data: FieldValues) => {
-        console.log(data);
+    // console.log('====================================');
+    // console.log(data);
+    // console.log('====================================');
+    // console.log('====================================');
+    // console.log(error);
+    // console.log('====================================');
 
+    const onSubmit = async (userData: FieldValues) => {
+        const res = await registerUser(userData).unwrap();
+
+        if (res?.success) {
+            Swal.fire({
+                title: 'Success!',
+                text: `${res?.message}`,
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            });
+        } else {
+            console.error("An error occurred:", res);
+        }
+        // console.log('====================================');
+        // console.log(res);
+        // console.log('====================================');
     }
     const handleShow = () => {
         setType("text")
@@ -46,10 +69,10 @@ const Register = () => {
 
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-4 w-[90%] mx-auto mt-10'>
                     <input type='text' placeholder='Enter Your User Name'
-                        {...register("userName", { required: true })}
-                        aria-invalid={errors.userName ? "true" : "false"}
+                        {...register("name", { required: true })}
+                        aria-invalid={errors.name ? "true" : "false"}
                         className='inputField' />
-                    {errors.userName?.type === 'required' && <p role="alert" className='text-error font-medium text-red-600'>User Name is required</p>}
+                    {errors.name?.type === 'required' && <p role="alert" className='text-error font-medium text-red-600'>User Name is required</p>}
 
                     <input type='email' placeholder='Enter Your Email'
                         {...register("email", { required: true })}
