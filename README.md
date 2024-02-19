@@ -106,10 +106,10 @@ In times of crisis and disaster, swift and coordinated responses are critical to
 ## Getting Started
 
 ### 1. Clone the repository:
-   - git clone https://github.com/your-username/event-360-frontend.git
+   - git clone https://github.com/Porgramming-Hero-web-course/l2-b2-assignment-6-fronten-saifulislam1431.git
 
 ### 2. Install dependencies:
-   - cd event-360-frontend
+   - cd l2-b2-assignment-6-fronten-saifulislam1431
    - npm install
 
 ### 3. Start the site:
