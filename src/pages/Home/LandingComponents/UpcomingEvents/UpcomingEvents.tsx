@@ -23,7 +23,7 @@ const UpcomingEvents = () => {
                 </div>
                 <div data-aos="fade-left" data-aos-duration="3000" className="col-span-12 lg:col-span-5 space-y-4 w-full h-full">
                     {
-                        data?.slice(2, 5)?.map((item: TEvent) => <div className="border w-full h-[100px] rounded flex items-center justify-between pl-3 gap-3">
+                        data?.slice(2, 5)?.map((item: TEvent) => <div className="border w-full h-[100px] rounded flex items-center justify-between pl-3 gap-3" key={item?._id}>
                             <div className="flex flex-col items-center bg-secondary py-4 px-2 text-sm font-bold text-primary rounded">
                                 <p>{item?.date?.split(" ")[0]}</p>
                                 <p>{item?.date?.split(" ")[1]}</p>

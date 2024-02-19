@@ -38,9 +38,6 @@ const UpdatePost = ({ post }: { post: TPost }) => {
                     category: category ? category : post?.category
                 }
             }
-            console.log('====================================');
-            console.log(data);
-            console.log('====================================');
 
             const res = await updatePost(data).unwrap();
             if (res?.success) {
