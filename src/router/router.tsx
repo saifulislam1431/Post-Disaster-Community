@@ -58,15 +58,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: "home",
-                element: <DashHome />
+                element: <PrivateRoute><DashHome /></PrivateRoute>
             },
             {
                 path: "supplies",
-                element: <AllSuppliesPost />
+                element: <PrivateRoute><AllSuppliesPost /></PrivateRoute>
             },
             {
                 path: "create-supply",
-                element: <CreateSupply />
+                element: <PrivateRoute><CreateSupply /></PrivateRoute>
             }
         ]
     }

@@ -1,12 +1,14 @@
 import { baseApi } from "../baseApi/baseApi";
 
 const publicApi = baseApi.injectEndpoints({
+    
     endpoints:(builder)=>({
         getAllPost: builder.query({
             query:()=>({
                 url:"all-post",
                 method:"GET"
-            })
+            }),
+            providesTags:["posts"]
         }),
         getAllTestimonial: builder.query({
             query: ()=>({
