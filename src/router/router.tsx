@@ -12,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import AllSuppliesPost from "@/pages/UserDashboard/AllSuppliesPost/AllSuppliesPost";
 import CreateSupply from "@/pages/UserDashboard/CreateSupply/CreateSupply";
 import DashHome from "@/pages/UserDashboard/Home/DashHome";
+import Volunteers from "@/pages/Volunteers/Volunteers";
+import Leaderboard from "@/pages/Leaderboard/Leaderboard";
 
 export const router = createBrowserRouter([
     {
@@ -39,12 +41,20 @@ export const router = createBrowserRouter([
                 element: <SupplyDetail />
             },
             {
-                path: "/about",
+                path: "/about-us",
                 element: <About />
             },
             {
-                path: "/contact",
+                path: "/community",
                 element: <Contact />
+            },
+            {
+                path: "/volunteer",
+                element: <Volunteers />
+            },
+            {
+                path: "/leaderboard",
+                element: <Leaderboard />
             }
         ]
     },

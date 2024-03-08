@@ -14,7 +14,7 @@ const Main = () => {
     return (
         <section className="max-w-7xl mx-auto overflow-hidden">
             <Navbar />
-            <div className="px-4 lg:px-10 mt-32">
+            <div className="px-4 lg:px-10 mt-36">
                 <motion.div
                     className="progress-bar z-50"
                     style={{ scaleX: scrollYProgress }}

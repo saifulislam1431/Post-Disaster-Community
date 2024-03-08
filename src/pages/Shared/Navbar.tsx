@@ -31,12 +31,17 @@ const Navbar = () => {
     const navItems = <>
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")}>Home</NavLink>
         <NavLink to="/supplies" className={({ isActive }) => (isActive ? "active" : "default")}>All Supplies</NavLink>
-        <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "default")}>About Us</NavLink>
-        <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "default")}>Contact Us</NavLink>
+        <NavLink to="/about-us" className={({ isActive }) => (isActive ? "active" : "default")}>About Us</NavLink>
+        <NavLink to="/community" className={({ isActive }) => (isActive ? "active" : "default")}>Community</NavLink>
+        <NavLink to="/leaderboard" className={({ isActive }) => (isActive ? "active" : "default")}>LeaderBoard</NavLink>
+        <NavLink to="/volunteer" className={({ isActive }) => (isActive ? "active" : "default")}>Volunteer</NavLink>
         {
             token && <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "default")}>Dashboard</NavLink>
         }
 
+    </>
+
+    const haederNav = <>
         {
             token ? <button onClick={handleOut} className="myBtn">
                 Logout
@@ -45,11 +50,15 @@ const Navbar = () => {
             </button>
         }
         <ModeToggle />
-
     </>
 
     return (
         <header className="border-b border-gray-200 px-4 py-3 nav-bg fixed top-0 left-0 right-0 z-50">
+            <section className="w-full flex items-center justify-end gap-5">
+                {
+                    haederNav
+                }
+            </section>
             <nav className="w-full flex items-center justify-between">
                 <Link to="/" className="logo-container flex items-center gap-2  w-3/4">
                     <motion.div
@@ -126,7 +135,7 @@ const Navbar = () => {
                     <ul className={cn(
                         "absolute -top-96 left-0 space-y-5 flex flex-col items-center bg-white  bg-opacity-100 w-full py-6 transition-all duration-500",
                         {
-                            "top-24": isOpen
+                            "top-32": isOpen
                         }
                     )}>
                         {navItems}
