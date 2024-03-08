@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { logout, useCurrentToken } from "@/redux/features/auth/authSlice";
 import Swal from "sweetalert2";
+import { ModeToggle } from "@/components/mode-toggle/mode-toggle";
+
 
 const Navbar = () => {
     const token = useAppSelector(useCurrentToken);
@@ -42,12 +44,14 @@ const Navbar = () => {
                 <Link to="/login">Login</Link>
             </button>
         }
+        <ModeToggle />
+
     </>
 
     return (
         <header className="border-b border-gray-200 px-4 py-3 nav-bg fixed top-0 left-0 right-0 z-50">
             <nav className="w-full flex items-center justify-between">
-                <Link to="/" className="logo-container flex items-center gap-2 lg:w-full w-3/4">
+                <Link to="/" className="logo-container flex items-center gap-2  w-3/4">
                     <motion.div
                         initial={{
                             y: -300
