@@ -33,7 +33,7 @@ const Navbar = () => {
         <NavLink to="/supplies" className={({ isActive }) => (isActive ? "active" : "default")}>All Supplies</NavLink>
         <NavLink to="/about-us" className={({ isActive }) => (isActive ? "active" : "default")}>About Us</NavLink>
         <NavLink to="/community" className={({ isActive }) => (isActive ? "active" : "default")}>Community</NavLink>
-        <NavLink to="/leaderboard" className={({ isActive }) => (isActive ? "active" : "default")}>LeaderBoard</NavLink>
+        <NavLink to="/leaderboard" className={({ isActive }) => (isActive ? "active" : "default")}>Leaderboard</NavLink>
         <NavLink to="/volunteer" className={({ isActive }) => (isActive ? "active" : "default")}>Volunteer</NavLink>
         {
             token && <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "default")}>Dashboard</NavLink>

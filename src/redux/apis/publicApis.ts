@@ -33,8 +33,14 @@ const publicApi = baseApi.injectEndpoints({
                 url: `single-post-details/${id}`,
                 method: "GET"
             })
-        })
+        }),
+        getDonationData: builder.query({
+            query: ()=>({
+                url: "donors-data-by-donation",
+                method: "GET"
+            })
+        }),
     })
 });
 
-export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery} = publicApi;
+export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery, useGetDonationDataQuery} = publicApi;

@@ -38,6 +38,7 @@ const OurVolunteer = () => {
                         </div>
                     </motion.div>
                 </div>
+
                 <div className="col-span-12 md:col-span-6 lg:col-span-3 relative cursor-pointer overflow-hidden" onMouseEnter={() => setIsHover({ hover: true, id: 2 })} onMouseLeave={() => setIsHover({ hover: false, id: 0 })}>
                     <img src="https://i.ibb.co/vBVWj7n/volunteer2.jpg" alt="volunteer2" className="w-full" />
                     <motion.div className="absolute w-full h-1/2 bg-accent bottom-0 flex items-center py-4 flex-col gap-3"
@@ -64,6 +65,7 @@ const OurVolunteer = () => {
                         </div>
                     </motion.div>
                 </div>
+
                 <div className="col-span-12 md:col-span-6 lg:col-span-3 relative cursor-pointer overflow-hidden" onMouseEnter={() => setIsHover({ hover: true, id: 3 })} onMouseLeave={() => setIsHover({ hover: false, id: 0 })}>
                     <img src="https://i.ibb.co/KKv0wtJ/volunteer5.jpg" alt="volunteer3" className="w-full" />
                     <motion.div className="absolute w-full h-1/2 bg-accent bottom-0 flex items-center py-4 flex-col gap-3"
@@ -90,6 +92,7 @@ const OurVolunteer = () => {
                         </div>
                     </motion.div>
                 </div>
+
                 <div className="col-span-12 md:col-span-6 lg:col-span-3 relative cursor-pointer overflow-hidden" onMouseEnter={() => setIsHover({ hover: true, id: 4 })} onMouseLeave={() => setIsHover({ hover: false, id: 0 })}>
                     <img src="https://i.ibb.co/wR8rc7f/volunteer6.jpg" alt="volunteer4" className="w-full" />
                     <motion.div className="absolute w-full h-1/2 bg-accent bottom-0 flex items-center py-4 flex-col gap-3"

@@ -1,0 +1,7 @@
+.tableBg {
+    background-color: hsla(0, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 31% 63%, hsla(32, 88%, 90%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(0, 100%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(191, 100%, 85%, 1) 0px, transparent 50%);
+}
