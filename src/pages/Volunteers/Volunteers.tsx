@@ -32,7 +32,7 @@ const Volunteers = () => {
                     const newVolunteer = {
                         email: userData?.email,
                         name: userData.name,
-                        phoneNumber: userData.phone,
+                        phoneNumber: userData.phoneNumber,
                         location: userData.location,
                         twitterId: userData?.twitterId ? userData?.twitterId : "",
                         linkedinId: userData?.linkedinId ? userData?.linkedinId : "",

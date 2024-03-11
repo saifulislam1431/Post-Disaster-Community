@@ -1,7 +1,6 @@
 import Banner from "./LandingComponents/Banner/Banner";
 import Gallery from "./LandingComponents/Gallery/Gallery";
 import OurPartner from "./LandingComponents/OurPartner/OurPartner";
-import OurVolunteer from "./LandingComponents/OurVolunteer/OurVolunteer";
 import SupplyPosts from "./LandingComponents/SupplyPosts/SupplyPosts";
 import Testimonials from "./LandingComponents/Testimonials/Testimonials";
 import UpcomingEvents from "./LandingComponents/UpcomingEvents/UpcomingEvents";
@@ -17,7 +16,7 @@ const Home = () => {
             <Gallery />
             <WhoAreWe />
             {/* <WhoItWorks /> */}
-            <OurVolunteer />
+            {/* <OurVolunteer /> */}
             <UpcomingEvents />
             <OurPartner />
         </section>

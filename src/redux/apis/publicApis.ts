@@ -47,7 +47,13 @@ const publicApi = baseApi.injectEndpoints({
                 body: data
             })
         }),
+        getVolunteers: builder.query({
+            query: ()=>({
+                url: "get-all-volunteer",
+                method: "GET"
+            })
+        }),
     })
 });
 
-export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery, useGetDonationDataQuery, usePostVolunteerMutation} = publicApi;
+export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery, useGetDonationDataQuery, usePostVolunteerMutation, useGetVolunteersQuery} = publicApi;
