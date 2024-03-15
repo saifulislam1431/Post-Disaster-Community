@@ -14,7 +14,8 @@ const publicApi = baseApi.injectEndpoints({
             query: ()=>({
                 url: "all-testimonial",
                 method: "GET"
-            })
+            }),
+            providesTags:["testimonial"]
         }),
         getAllGallery: builder.query({
             query: ()=>({

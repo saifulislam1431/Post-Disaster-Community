@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/login/login.jpg"
 import { HiArrowSmLeft } from "react-icons/hi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { setUser } from "@/redux/features/auth/authSlice";
 import { verifyToken } from "@/utils/verifyToken";
 
 const Login = () => {
+    const navigate = useNavigate()
     const [login] = useLoginMutation();
     const dispatch = useAppDispatch()
     const [type, setType] = useState("password");
@@ -31,6 +32,7 @@ const Login = () => {
                 confirmButtonText: 'Cool'
             });
             dispatch(setUser({ user: user, token: res?.token }))
+            navigate("/")
         } else {
             console.error("An error occurred:", res);
         }

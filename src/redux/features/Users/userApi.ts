@@ -24,8 +24,17 @@ const userApi = baseApi.injectEndpoints({
                 body: data
             }),
             invalidatesTags:["posts"]
-        })
+        }),
+        addTestimonial: builder.mutation({
+            query:(data)=>({
+                url:"create-new-testimonial",
+                method:"POST",
+                body: data
+            }),
+            invalidatesTags:["testimonial"]
+        }),
+        
     })
 })
 
-export const {useDeletePostMutation, useAddPostMutation, useUpdatePostMutation} = userApi;
+export const {useDeletePostMutation, useAddPostMutation, useUpdatePostMutation, useAddTestimonialMutation} = userApi;

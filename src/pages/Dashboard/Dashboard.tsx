@@ -1,6 +1,6 @@
 import DashNav from "@/components/DashNav/DashNav";
 import cn from "@/utils/cn";
-import { ClipboardPlus, LayoutDashboard, ListIcon } from "lucide-react";
+import { ClipboardPenLine, ClipboardPlus, LayoutDashboard, ListIcon } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 
@@ -41,6 +41,17 @@ const Dashboard = () => {
 
                         <ClipboardPlus className="shrink-0 w-7 h-7" />
                         <span className="truncate hidden md:flex">Create Supply</span>
+                    </NavLink>
+
+                    <NavLink to="/dashboard/create-testimonial" className={({ isActive }) => cn(
+                        "flex items-center gap-2 border border-white px-2 lg:px-3 py-2 rounded-l-md text-sm font-semibold hover:bg-white hover:text-secondary transition-all duration-500",
+                        {
+                            "bg-white text-secondary": isActive
+                        }
+                    )}>
+
+                        <ClipboardPenLine className="shrink-0 w-7 h-7" />
+                        <span className="truncate hidden md:flex">Create Testimonial</span>
                     </NavLink>
                 </div>
 
