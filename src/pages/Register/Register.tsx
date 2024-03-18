@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/login/register.jpg"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { HiArrowSmLeft } from "react-icons/hi";
 import { useRegisterUserMutation } from "@/redux/features/auth/authAPi";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import imgLogo from "../../assets/logo/imglogo.png";
+const token = import.meta.env.VITE_IMAGE_TOKEN;
 
 const Register = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.pathname || "/"
+    const hosting_url = `https://api.imgbb.com/1/upload?key=${token}`
     const [registerUser] = useRegisterUserMutation();
     const [type, setType] = useState("password");
     const [IsShow, setIsShow] = useState(false);
@@ -21,18 +27,73 @@ const Register = () => {
     // console.log('====================================');
 
     const onSubmit = async (userData: FieldValues) => {
-        const res = await registerUser(userData).unwrap();
+        const image = userData?.image;
+        const formData = new FormData();
+        formData?.append("image", image[0]);
 
-        if (res?.success) {
-            Swal.fire({
-                title: 'Success!',
-                text: `${res?.message}`,
-                icon: 'success',
-                confirmButtonText: 'Cool'
-            });
+        if (image) {
+            fetch(hosting_url, {
+                method: "POST",
+                body: formData
+            })
+                .then(res => res.json())
+                .then(async (ResData) => {
+                    // console.log(ResData.data.url)
+                    if (ResData) {
+                        const data = {
+                            email: userData?.email,
+                            name: userData?.name,
+                            imageURL: ResData?.data?.url,
+                            password: userData?.password,
+                            date: new Date()
+                        }
+                        // console.log(newTestimonial);
+
+
+                        const res = await registerUser(data).unwrap();
+
+                        if (res?.success) {
+                            Swal.fire({
+                                title: 'Success!',
+                                text: `${res?.message}`,
+                                icon: 'success',
+                                confirmButtonText: 'Cool'
+                            });
+                            navigate(from, { replace: true })
+                        } else {
+                            console.error("An error occurred:", res);
+                        }
+
+
+
+                    }
+
+                })
         } else {
-            console.error("An error occurred:", res);
+            const data = {
+                email: userData?.email,
+                name: userData?.name,
+                imageURL: "https://i.ibb.co/yyYWbyJ/user.png",
+                password: userData?.password,
+                date: new Date()
+            }
+
+            const res = await registerUser(data).unwrap();
+
+            if (res?.success) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: `${res?.message}`,
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
+                navigate(from, { replace: true })
+            } else {
+                console.error("An error occurred:", res);
+            }
         }
+
+
         // console.log('====================================');
         // console.log(res);
         // console.log('====================================');
@@ -68,6 +129,15 @@ const Register = () => {
                 <p className='text-center'> Become a part of  Post-Disaster Community Health and Medical Supply Chain Platform</p>
 
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-4 w-[90%] mx-auto mt-10'>
+
+                    <div className='flex justify-center flex-col items-center'>
+                        <input {...register("image", { required: false })} type="file" id='file' className='hidden' />
+                        <label htmlFor="file" className=' border rounded-full'>
+                            <img className='w-20 rounded-full hover:border-blue-500 border-4 transform duration-500' src={imgLogo} alt="" />
+                        </label>
+                        {errors.image?.type === 'required' && <p role="alert" className='text-error font-medium text-red-600'>Image is required</p>}
+                    </div>
+
                     <input type='text' placeholder='Enter Your User Name'
                         {...register("name", { required: true })}
                         aria-invalid={errors.name ? "true" : "false"}

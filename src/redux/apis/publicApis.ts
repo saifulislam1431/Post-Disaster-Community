@@ -54,7 +54,14 @@ const publicApi = baseApi.injectEndpoints({
                 method: "GET"
             })
         }),
+        getCommunityPost: builder.query({
+            query:()=>({
+                url:"post-community-post",
+                method:"GET",
+            }),
+            providesTags:["communityPost"]
+        }),
     })
 });
 
-export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery, useGetDonationDataQuery, usePostVolunteerMutation, useGetVolunteersQuery} = publicApi;
+export const {useGetAllPostQuery, useGetAllTestimonialQuery, useGetAllGalleryQuery, useGetAllEventsQuery, useGetSinglePostQuery, useGetDonationDataQuery, usePostVolunteerMutation, useGetVolunteersQuery, useGetCommunityPostQuery} = publicApi;

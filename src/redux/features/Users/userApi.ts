@@ -33,8 +33,15 @@ const userApi = baseApi.injectEndpoints({
             }),
             invalidatesTags:["testimonial"]
         }),
-        
+        postCommunityPost: builder.mutation({
+            query:(data)=>({
+                url:"post-community-post",
+                method:"POST",
+                body: data
+            }),
+            invalidatesTags:["communityPost"]
+        })
     })
 })
 
-export const {useDeletePostMutation, useAddPostMutation, useUpdatePostMutation, useAddTestimonialMutation} = userApi;
+export const {useDeletePostMutation, useAddPostMutation, useUpdatePostMutation, useAddTestimonialMutation, usePostCommunityPostMutation} = userApi;

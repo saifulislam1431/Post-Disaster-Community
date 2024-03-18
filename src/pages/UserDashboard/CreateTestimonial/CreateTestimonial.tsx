@@ -11,6 +11,8 @@ interface TUser {
     email?: string,
     iat?: string,
     exp?: string
+    name?: string,
+    imageURL?: string
 }
 
 const CreateTestimonial = () => {
@@ -54,6 +56,7 @@ const CreateTestimonial = () => {
                             icon: 'success',
                             confirmButtonText: 'Cool'
                         });
+                        reset()
                     } else {
                         console.error("An error occurred:", response);
                     }
